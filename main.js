@@ -14,6 +14,7 @@ function startHangman() {
     // console.log(letters)
     const letterSection = document.getElementById("letters");
     letterSection.addEventListener("click", buttonHandler);
+    window.addEventListener("keydown", keyHandler);
 }
 
 function setUnderScores() {
@@ -26,6 +27,10 @@ function setUnderScores() {
 
 function buttonHandler(event) {
     letterHandler(event.target.id)
+}
+
+function keyHandler(event) {
+    letterHandler(event.key);
 }
 
 function letterHandler(letter) {
